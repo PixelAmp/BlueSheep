@@ -13,7 +13,7 @@ namespace BlueSheepMobile
 			InitializeComponent();
 
 			//MainPage = new BlueSheepMobile.LoginPage();
-            MainPage = new NavigationPage(new BlueSheepMobile.PermissionsPage());
+            MainPage = new NavigationPage(new BlueSheepMobile.LoginPage());
         }
 
 		protected override void OnStart ()

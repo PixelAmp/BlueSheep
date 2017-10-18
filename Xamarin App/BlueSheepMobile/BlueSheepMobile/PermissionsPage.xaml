@@ -9,13 +9,25 @@
             IsPullToRefreshEnabled="true"
             Refreshing="Handle_Refreshing"
             BackgroundColor="LightSkyBlue">
+
+        <ListView.Header>
+            <StackLayout>
+                <Image
+                    Margin="10,0,10,0"
+                    Source="MicrochartsGraphs.png"
+                    WidthRequest="375"
+                    HeightRequest="590"
+                    />  
+            </StackLayout>
+        </ListView.Header>
+
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <ViewCell.ContextActions>
                         <MenuItem
                             
-                             CommandParameter="{Binding .}" />
+                                CommandParameter="{Binding .}" />
                         <MenuItem
                             
                                 IsDestructive="True" />

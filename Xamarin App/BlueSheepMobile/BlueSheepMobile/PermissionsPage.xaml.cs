@@ -38,10 +38,28 @@ namespace BlueSheepMobile
                 QuickInfo = "Collect data from BlueTooth Radio",
                 MoreInfoText = "Enter more info here",
             };
+            var ReadSMS = new PermissionTabTemplate
+            {
+                Function = "Read SMS",
+                QuickInfo = "Allow phone to read incomming SMS messages",
+                MoreInfoText = "",
+            };
             var Location = new PermissionTabTemplate
             {
                 Function = "Location",
                 QuickInfo = "Track Phone's Location",
+                MoreInfoText = "",
+            };
+            var RecordAudio = new PermissionTabTemplate
+            {
+                Function = "Record Audio",
+                QuickInfo = "Allow application to record audio",
+                MoreInfoText = "",
+            };
+            var PersistentActivity = new PermissionTabTemplate
+            {
+                Function = "PersistentActivity",
+                QuickInfo = "Alow application to run in the background",
                 MoreInfoText = "",
             };
             var Accele = new PermissionTabTemplate
@@ -62,12 +80,29 @@ namespace BlueSheepMobile
                 QuickInfo = "Track phone's battery usage",
                 MoreInfoText = "",
             };
-
+            var WifiState = new PermissionTabTemplate
+            {
+                Function = "Wifi State",
+                QuickInfo = "Track phone's wifi connection",
+                MoreInfoText = "",
+            };
+            var NetworkState = new PermissionTabTemplate
+            {
+                Function = "Network State",
+                QuickInfo = "Track phone's Mobile network state",
+                MoreInfoText = "",
+            };
+            
             itemCollection.Add(BlueTooth);
+            itemCollection.Add(ReadSMS);
             itemCollection.Add(Location);
+            itemCollection.Add(RecordAudio);
+            itemCollection.Add(PersistentActivity);
             itemCollection.Add(Accele);
             itemCollection.Add(AmbiLight);
             itemCollection.Add(Battery);
+            itemCollection.Add(WifiState);
+            itemCollection.Add(NetworkState);
 
             PermissionsListView.ItemsSource = itemCollection;
         }
