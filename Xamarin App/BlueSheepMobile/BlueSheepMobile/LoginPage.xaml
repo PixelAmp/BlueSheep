@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlueSheepMobile.LoginPage"
+             NavigationPage.HasNavigationBar ="false"
+             >
+    
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="LightSkyBlue"
+            Padding="0,0,0,0">
+            <Label
+                Margin="0,30"
+                x:Name="TitleText"
+                Text="Blue Sheep Mobile"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                Font="Lobster-Regular.ttf#Lobster-Regular"
+                FontSize="60"
+                />
+            <Entry
+                x:Name="Username_Entry"
+                Placeholder="UserName"
+                />
+
+            <Entry
+                x:Name="Password_Entry"
+                Placeholder="Password"
+                IsPassword="True"
+                />
+
+            <Button
+                BackgroundColor="#f4d442"
+                Text ="Login"
+                Clicked="Handle_Login"
+                WidthRequest = "130"
+                HeightRequest = "45"
+                HorizontalOptions="Center"
+                
+                />
+            
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
