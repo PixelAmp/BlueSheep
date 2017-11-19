@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 
 
-namespace Sample
+namespace BlueSheep
 {
     public partial class MainPage : ContentPage
     {

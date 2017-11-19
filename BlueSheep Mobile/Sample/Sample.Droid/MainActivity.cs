@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 
-namespace Sample.Droid
+namespace BlueSheep.Droid
 {
     [Activity(
         Label = "Sensors",

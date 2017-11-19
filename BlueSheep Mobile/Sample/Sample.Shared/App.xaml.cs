@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Skip)]
 
-namespace Sample
+namespace BlueSheep
 {
     public partial class App : Application
     {

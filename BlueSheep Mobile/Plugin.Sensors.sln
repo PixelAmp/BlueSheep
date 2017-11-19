@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.iOS", "Sample\Sample.iOS\Sample.iOS.csproj", "{A76015FB-5B2B-40D5-8BDB-50D0E805EE85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueSheep.iOS", "Sample\Sample.iOS\BlueSheep.iOS.csproj", "{A76015FB-5B2B-40D5-8BDB-50D0E805EE85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Droid", "Sample\Sample.Droid\Sample.Droid.csproj", "{23E16784-23E8-4546-A31C-FBCE22ECA17F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueSheep.Droid", "Sample\Sample.Droid\BlueSheep.Droid.csproj", "{23E16784-23E8-4546-A31C-FBCE22ECA17F}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.Shared", "Sample\Sample.Shared\Sample.Shared.shproj", "{A4C575B6-EE67-4CA5-8FC2-A099A67AFF0E}"
 EndProject

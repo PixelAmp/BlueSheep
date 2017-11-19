@@ -4,7 +4,7 @@ using UIKit;
 using Xamarin.Forms;
 
 
-namespace Sample.iOS
+namespace BlueSheep.iOS
 {
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate

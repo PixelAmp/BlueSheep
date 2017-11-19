@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Plugin.Sensors;
 
 //Initialize sensors to be drawing data
-namespace Sample
+namespace BlueSheep
 {
     public class MainViewModel
     {

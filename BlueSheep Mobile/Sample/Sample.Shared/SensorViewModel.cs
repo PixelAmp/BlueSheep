@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using PropertyChanged;  
 
 
-namespace Sample
+namespace BlueSheep
 {
     [ImplementPropertyChanged]
     public class SensorViewModel<TReading> : ISensorViewModel

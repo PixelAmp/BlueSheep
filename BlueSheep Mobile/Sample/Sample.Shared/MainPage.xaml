@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Sample.MainPage"
-             Title="Sensor Sample">
+             x:Class="BlueSheep.MainPage"
+             Title="Sensor Page">
 
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Sensors}" RowHeight="80">

@@ -2,7 +2,7 @@
 using System.Windows.Input;
 
 //View Model template that is displayed on the user screen
-namespace Sample
+namespace BlueSheep
 {
     public interface ISensorViewModel
     {

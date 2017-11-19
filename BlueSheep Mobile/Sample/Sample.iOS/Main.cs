@@ -2,7 +2,7 @@
 using UIKit;
 
 
-namespace Sample.iOS
+namespace BlueSheep.iOS
 {
     public class Application
     {
