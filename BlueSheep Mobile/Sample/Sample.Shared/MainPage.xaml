@@ -5,47 +5,54 @@
              Title="Sensor Page">
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Sensors}" RowHeight="100">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="7*" />
-                                    <ColumnDefinition Width="3*" />
-                                </Grid.ColumnDefinitions>
+        <StackLayout>
+            <Button
+            Text="Display Log"
+            BackgroundColor="LightBlue"
+            Clicked="GoToLogPage"
+            />
+            <ListView ItemsSource="{Binding Sensors}" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
 
-                                <Label Text="{Binding Title}" Grid.Column="0" Grid.Row="0" />
-                                <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
-                                    <Label Text="{Binding ValueName, StringFormat='{0} : '}" FontAttributes="Bold" />
-                                    <Label Text="{Binding Value}" FontAttributes="Italic" />
-                                </StackLayout>
-                                <Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />
+                                    <Label Text="{Binding Title}" Grid.Column="0" Grid.Row="0" />
+                                    <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+                                        <Label Text="{Binding ValueName, StringFormat='{0} : '}" FontAttributes="Bold" />
+                                        <Label Text="{Binding Value}" FontAttributes="Italic" />
+                                    </StackLayout>
+                                    <Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />
 
-                                <Button Text="{Binding ToggleText}" Command="{Binding Toggle}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
-                                    <Button.Triggers>
-                                        <Trigger TargetType="Button" Property="IsEnabled" Value="False">
-                                            <Setter Property="BackgroundColor" Value="Transparent" />
-                                            <Setter Property="BorderColor" Value="Transparent" />
-                                        </Trigger>
-                                        <Trigger TargetType="Button" Property="IsEnabled" Value="True">
-                                            <Setter Property="BackgroundColor" Value="Blue" />
-                                            <Setter Property="TextColor" Value="White" />
-                                        </Trigger>
-                                    </Button.Triggers>
-                                </Button>
-                            </Grid>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                    <Button Text="{Binding ToggleText}" Command="{Binding Toggle}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                                        <Button.Triggers>
+                                            <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                                                <Setter Property="BackgroundColor" Value="Transparent" />
+                                                <Setter Property="BorderColor" Value="Transparent" />
+                                            </Trigger>
+                                            <Trigger TargetType="Button" Property="IsEnabled" Value="True">
+                                                <Setter Property="BackgroundColor" Value="Blue" />
+                                                <Setter Property="TextColor" Value="White" />
+                                            </Trigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
