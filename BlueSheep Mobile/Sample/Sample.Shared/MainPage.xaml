@@ -5,7 +5,7 @@
              Title="Sensor Page">
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Sensors}" RowHeight="80">
+        <ListView ItemsSource="{Binding Sensors}" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -19,6 +19,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
 
                                 <Label Text="{Binding Title}" Grid.Column="0" Grid.Row="0" />
@@ -26,7 +27,8 @@
                                     <Label Text="{Binding ValueName, StringFormat='{0} : '}" FontAttributes="Bold" />
                                     <Label Text="{Binding Value}" FontAttributes="Italic" />
                                 </StackLayout>
-                                
+                                <Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />
+
                                 <Button Text="{Binding ToggleText}" Command="{Binding Toggle}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
                                     <Button.Triggers>
                                         <Trigger TargetType="Button" Property="IsEnabled" Value="False">

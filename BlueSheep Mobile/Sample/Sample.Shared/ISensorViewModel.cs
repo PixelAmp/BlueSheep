@@ -11,5 +11,6 @@ namespace BlueSheep
         string ValueName { get; }
         string Value { get; }
         string ToggleText { get; }
+        string Time { get; }
     }
 }

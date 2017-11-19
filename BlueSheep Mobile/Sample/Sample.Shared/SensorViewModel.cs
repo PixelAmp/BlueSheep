@@ -19,6 +19,7 @@ namespace BlueSheep
             this.Title = title ?? sensor.GetType().Name.Replace("Impl", String.Empty);
             this.ValueName = valueName;
             this.ToggleText = sensor.IsAvailable ? "Start" : "Sensor Not Available";
+            this.Value = "NoData";
 
             this.Toggle = new Command(() =>
             {
@@ -30,8 +31,9 @@ namespace BlueSheep
                     this.ToggleText = "Stop";
                     this.sensorSub = sensor
                         .WhenReadingTaken()
-                        .Sample(TimeSpan.FromMilliseconds(500))
+                        .Sample(TimeSpan.FromSeconds(1))
                         .Subscribe(this.Update);
+                    this.Time = DateTime.Now.ToString();
                 }
 
                 else
@@ -39,6 +41,7 @@ namespace BlueSheep
                     this.ToggleText = "Start";
                     this.sensorSub.Dispose();
                     this.sensorSub = null;
+                    this.Time = DateTime.Now.ToString();
                 }
             });
         }
@@ -49,10 +52,11 @@ namespace BlueSheep
         public string ValueName { get; }
         public string Value { get; set; }
         public string ToggleText { get; set; }
+        public string Time { get; set; }
 
 
         protected virtual void Update(TReading reading) => Device.BeginInvokeOnMainThread(() =>
-            this.Value = reading.ToString()
+            this.Value = DateTime.Now.ToString() + " " + reading.ToString()
         );
     }
 }
