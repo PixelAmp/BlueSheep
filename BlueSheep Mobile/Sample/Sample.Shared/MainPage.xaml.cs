@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 
-
 namespace BlueSheep
 {
     public partial class MainPage : ContentPage
@@ -14,8 +13,7 @@ namespace BlueSheep
 
         void GoToLogPage(object sender, System.EventArgs e)
         {
-            
-            Navigation.PushAsync(new LogDisplay());
+            //Navigation.PushAsync(new RawLog());
         }
 
     }

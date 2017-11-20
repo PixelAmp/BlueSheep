@@ -67,9 +67,15 @@ namespace BlueSheep
         public string Time { get; set; }
         public string filename { get; set; }
         
+        /*
         //original
         protected virtual void Update(TReading reading) => Device.BeginInvokeOnMainThread(() =>
         this.Value = DateTime.Now.ToString() + " " + reading.ToString());
-        
+        */
+
+        //without the date
+        protected virtual void Update(TReading reading) => Device.BeginInvokeOnMainThread(() =>
+        this.Value = reading.ToString());
+
     }
 }

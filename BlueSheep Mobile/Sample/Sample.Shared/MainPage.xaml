@@ -5,11 +5,12 @@
              Title="Sensor Page">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="LightSkyBlue">
             <Button
-            Text="Display Log"
-            BackgroundColor="LightBlue"
-            Clicked="GoToLogPage"
+                Text="Display Log"
+                BackgroundColor="#f4d442"
+                TextColor="Black"
+                Clicked="GoToLogPage"
             />
             
             <ListView ItemsSource="{Binding Sensors}" RowHeight="100">
@@ -43,8 +44,8 @@
                                                 <Setter Property="BorderColor" Value="Transparent" />
                                             </Trigger>
                                             <Trigger TargetType="Button" Property="IsEnabled" Value="True">
-                                                <Setter Property="BackgroundColor" Value="Blue" />
-                                                <Setter Property="TextColor" Value="White" />
+                                                <Setter Property="BackgroundColor" Value="#f4d442" />
+                                                <Setter Property="TextColor" Value="Black" />
                                             </Trigger>
                                         </Button.Triggers>
                                     </Button>

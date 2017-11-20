@@ -7,21 +7,19 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO; //read and write files
 
-
 namespace BlueSheep
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LogDisplay : ContentPage
+	public partial class RawLog : ContentPage
 	{
-		public LogDisplay ()
+		public RawLog ()
 		{
+			InitializeComponent ();
+
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             //string path = Environment.ExternalStorageDirectory;
             string filename = Path.Combine(path, "SensorData.txt");
-
-
-            InitializeComponent ();
-
+            
             //read file
             using (var streamReader = new StreamReader(filename))
             {
@@ -30,8 +28,5 @@ namespace BlueSheep
                 LogLabel.Text = content;
             }
         }
-
-
-
 	}
 }

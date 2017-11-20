@@ -13,7 +13,7 @@ namespace BlueSheep
         {
             this.InitializeComponent();
 
-			this.MainPage = new NavigationPage(new MainPage());
+			this.MainPage = new NavigationPage(new LoginPage());
         }
     }
 }
