@@ -7,7 +7,14 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="LightSkyBlue">
             <Button
-                Text="Display Log"
+                Text="Display Data Charts"
+                BackgroundColor="#f4d442"
+                TextColor="Black"
+                Clicked="GoToChartPage"
+            />
+            
+            <Button
+                Text="Display Raw Log"
                 BackgroundColor="#f4d442"
                 TextColor="Black"
                 Clicked="GoToLogPage"
