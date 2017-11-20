@@ -11,6 +11,7 @@
             BackgroundColor="LightBlue"
             Clicked="GoToLogPage"
             />
+            
             <ListView ItemsSource="{Binding Sensors}" RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>

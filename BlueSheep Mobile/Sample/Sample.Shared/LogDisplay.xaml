@@ -4,18 +4,20 @@
              x:Class="BlueSheep.LogDisplay"
              Title="Data Collected">
     <ContentPage.Content>
-        <StackLayout>
-            <Label 
-                x:Name="welcomeLabel"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="Center" 
-                TextColor="Black"
+        <ScrollView>
+            <StackLayout>
+                <Label 
+                    x:Name="welcomeLabel"
+                    Text="Welcome to Xamarin.Forms!" 
+                    HorizontalOptions="Center" 
+                    TextColor="Black"
                 />
-            <Label
-                 x:Name="LogLabel"
+
+                <Label
+                    x:Name="LogLabel"
                  />
 
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

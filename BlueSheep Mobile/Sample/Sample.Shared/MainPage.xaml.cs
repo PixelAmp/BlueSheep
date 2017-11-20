@@ -14,6 +14,7 @@ namespace BlueSheep
 
         void GoToLogPage(object sender, System.EventArgs e)
         {
+            
             Navigation.PushAsync(new LogDisplay());
         }
 
