@@ -64,6 +64,7 @@ namespace BlueSheep
 
             //wait for response, then handle it
             var response = await App.client.PostAsync(uri, content); //post
+
             if (response.IsSuccessStatusCode)
             { //success
                 //get our JSON response and convert it to a ResponseItem object
@@ -80,10 +81,13 @@ namespace BlueSheep
                 //if no errors, do something
                 if (resItem.Success)
                 {
-                    //login was successful, so store the successful login info for future use. (these variables are global to the app)
+                    //login was successful, so store the successful login info for future use. 
+                    //(these variables are global to the app)
+                    //will use username for log file
+
                     App.userUsername = item.Username;
                     App.userPassword = item.Password;
-
+ 
                     //this is so that the user doesn't back into the login page and makes the permissions page the top page on the stack
                     Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
                     await Navigation.PopAsync(); //delete's login page from the stack so you can't go back to it
