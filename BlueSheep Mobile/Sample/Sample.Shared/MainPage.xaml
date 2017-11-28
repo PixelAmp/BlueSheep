@@ -5,19 +5,17 @@
              Title="Sensor Page">
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="LightSkyBlue">
+        <StackLayout Style="{StaticResource StackLayoutStyle}">
             <Button
                 Text="Display Data Charts"
-                BackgroundColor="#f4d442"
-                TextColor="Black"
                 Clicked="GoToChartPage"
+                Style="{StaticResource ClickableTextButtonStyle}"
             />
             
             <Button
                 Text="Display Raw Log"
-                BackgroundColor="#f4d442"
-                TextColor="Black"
                 Clicked="GoToLogPage"
+                Style="{StaticResource ClickableTextButtonStyle}"
             />
             
             <ListView ItemsSource="{Binding Sensors}" RowHeight="100">

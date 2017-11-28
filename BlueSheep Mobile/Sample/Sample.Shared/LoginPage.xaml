@@ -1,55 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BlueSheep.LoginPage"
-             NavigationPage.HasNavigationBar ="false"
-             >
-    
-    
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout
-                BackgroundColor="LightSkyBlue"
-                Padding="0,0,0,0">
-                <Label
-                    Margin="0,30, 0, -10"
-                    x:Name="TitleText"
-                    Text="Blue Sheep Mobile"
-                    TextColor="Black"
-                    HorizontalTextAlignment="Center"
-                    Font="Lobster-Regular.ttf#Lobster-Regular"
-                    FontSize="60"
-                    />
-                <Entry
-                    x:Name="Username_Entry"
-                    Placeholder="UserName"
-                    />
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BlueSheep.LoginPage"
+    NavigationPage.HasNavigationBar ="false">
 
-                <Entry
-                    x:Name="Password_Entry"
-                    Placeholder="Password"
-                    IsPassword="True"
-                    />
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource StackLayoutStyle}" >
+            
+            <Label
+                Margin="0,30, 0, -10"
+                x:Name="TitleText"
+                Text="Blue Sheep Mobile"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                Font="Lobster-Regular.ttf#Lobster-Regular"
+                FontSize="60"
+                />
+
+            <Entry
+                x:Name="Username_Entry"
+                Placeholder="UserName"
+                Style="{StaticResource EntryBoxStyle}"
+                />
+
+            <Entry
+                x:Name="Password_Entry"
+                Placeholder="Password"
+                IsPassword="True"
+                Style="{StaticResource EntryBoxStyle}"
+                />
+
+            <Button
+                x:Name="LoginButton"
+                Text ="Login"
+                Clicked="Login_Clicked_Basic"
+                Style="{StaticResource ClickableTextButtonStyle}"
+                HorizontalOptions="Center"
+                />
+
+            <StackLayout
+                Orientation="Horizontal"
+                Margin="20,10,20,0">
+                
+                <Button
+                    Text="Forgot Password?"
+                    Style="{StaticResource ClickableTextButtonStyle}"
+                    Clicked="ForgotPassword_Clicked"/>
 
                 <Button
-                    x:Name="LoginButton"
-                    BackgroundColor="#f4d442"
-                    Text ="Login"
-                    Clicked="Handle_Login"
-                    WidthRequest = "130"
-                    HeightRequest = "45"
-                    HorizontalOptions="Center"
-                    />
-
-                <Image
-                    Margin="0,20"
-                    Source="@drawable/icon"
-                    HorizontalOptions="Center"
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    />
-                
+                    Text="Create Account"
+                    Style="{StaticResource ClickableTextButtonStyle}"
+                    Clicked="NewAccount_Clicked"/>
             </StackLayout>
-        </ScrollView>
+
+            <Image
+                Margin="0,20"
+                Source="BlueSheep.png"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                HeightRequest="200"
+                    />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
