@@ -35,6 +35,13 @@ namespace BlueSheep
                 Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
                 await Navigation.PopAsync(); //delete's login page from the stack
             }
+
+            else
+            {
+                await DisplayAlert("Error: IncorrectPassword", "Incorrect username or password", "OK");
+                Password_Entry.Text = "";
+                return;
+            }
         }
         
         async void Login_Clicked(object sender, System.EventArgs e)
@@ -56,7 +63,7 @@ namespace BlueSheep
             item.Password = Password_Entry.Text;
 
             //set ip address to connect to
-            var uri = new Uri(" "/*"http://54.193.30.236/index.py"*/);
+            var uri = new Uri("http://34.208.179.48/index.py");
 
             //serialize object and make it ready for sending over the internet
             var json = JsonConvert.SerializeObject(item);
