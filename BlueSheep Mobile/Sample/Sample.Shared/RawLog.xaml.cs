@@ -16,16 +16,33 @@ namespace BlueSheep
 		{
 			InitializeComponent ();
 
+            ReadFile();
+
+            
+        }
+
+        async private void ReadFile()
+        {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             //string path = Environment.ExternalStorageDirectory;
             string filename = Path.Combine(path, "SensorData.txt");
             
             //read file
-            using (var streamReader = new StreamReader(filename))
+            if (File.Exists(filename))
             {
-                string content = streamReader.ReadToEnd();
-                System.Diagnostics.Debug.WriteLine(content);
-                LogLabel.Text = content;
+                using (var streamReader = new StreamReader(filename))
+                {
+                    string content = streamReader.ReadToEnd();
+                    System.Diagnostics.Debug.WriteLine(content);
+                    LogLabel.Text = content;
+                }
+                return;
+            }
+
+            else
+            {
+                await DisplayAlert("Error: NoLog", "No log file available", "OK");
+                return;
             }
         }
 	}

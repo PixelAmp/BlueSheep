@@ -6,19 +6,27 @@
 
     <ContentPage.Content>
         <StackLayout Style="{StaticResource StackLayoutStyle}">
-            <Button
-                Text="Display Data Charts"
-                Clicked="GoToChartPage"
-                Style="{StaticResource ClickableTextButtonStyle}"
-            />
-            
-            <Button
-                Text="Display Raw Log"
-                Clicked="GoToLogPage"
-                Style="{StaticResource ClickableTextButtonStyle}"
-            />
-            
             <ListView ItemsSource="{Binding Sensors}" RowHeight="100">
+                <ListView.Header>
+                    <StackLayout>
+                        <Button
+                            Text="Display Data Charts"
+                            Clicked="GoToChartPage"
+                            Style="{StaticResource ClickableTextButtonStyle}"
+                        />
+                        <Button
+                            Text="Display Raw Log"
+                            Clicked="GoToLogPage"
+                            Style="{StaticResource ClickableTextButtonStyle}"
+                        />
+
+                        <Label 
+                            x:Name="DisplayLog" 
+                            Text="default"
+                            HeightRequest="40"/>
+                    </StackLayout>
+                </ListView.Header>
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -33,6 +41,7 @@
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
 
                                     <Label Text="{Binding Title}" Grid.Column="0" Grid.Row="0" />
@@ -40,7 +49,9 @@
                                         <Label Text="{Binding ValueName, StringFormat='{0} : '}" FontAttributes="Bold" />
                                         <Label Text="{Binding Value}" FontAttributes="Italic" />
                                     </StackLayout>
-                                    <Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />
+                                    <!--<Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />-->
+
+                                    <Label Text="{Binding Log, StringFormat='Log : {0}'}" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" HeightRequest="20"/>
 
                                     <Button Text="{Binding ToggleText}" Command="{Binding Toggle}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
                                         <Button.Triggers>

@@ -22,7 +22,10 @@ namespace BlueSheep
 
             this.InitializeComponent();
 
-			this.MainPage = new NavigationPage(new LoginPage());
+			//this.MainPage = new NavigationPage(new LoginPage());
+            
+            //Skip Login and go to main sensors page
+            this.MainPage = new NavigationPage(new MainPage());
         }
     }
 }

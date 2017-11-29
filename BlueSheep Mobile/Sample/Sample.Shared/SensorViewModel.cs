@@ -21,16 +21,8 @@ namespace BlueSheep
             this.ValueName = valueName;
             this.ToggleText = sensor.IsAvailable ? "Start" : "Sensor Not Available";
             this.Value = "No Data";
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string filename = Path.Combine(path, "ReadWritedata.txt");
+            var item = new LogItems();
 
-            /*
-            //write to file
-            using (var streamWriter = new StreamWriter(filename, true))
-            {
-                streamWriter.WriteLine(DateTime.UtcNow);
-            }
-            */
 
             this.Toggle = new Command(() =>
             {
@@ -65,17 +57,17 @@ namespace BlueSheep
         public string Value { get; set; }
         public string ToggleText { get; set; }
         public string Time { get; set; }
-        public string filename { get; set; }
-        
+        public string Log { get; set; }
+
         /*
-        //original
+        //Sets value to reading, concatinates the time to reading and adds it to the log
         protected virtual void Update(TReading reading) => Device.BeginInvokeOnMainThread(() =>
-        this.Value = DateTime.Now.ToString() + " " + reading.ToString());
+        this.Log += (DateTime.Now.ToString() + " " + reading.ToString() + (this.Value = reading.ToString())));
         */
 
-        //without the date
+        //Sets value to reading and adds it to the log
         protected virtual void Update(TReading reading) => Device.BeginInvokeOnMainThread(() =>
-        this.Value = reading.ToString());
+        this.Log += this.Value = reading.ToString());
 
     }
 }

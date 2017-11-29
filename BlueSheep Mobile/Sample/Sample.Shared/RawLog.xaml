@@ -8,13 +8,15 @@
             <StackLayout>
                 <Label 
                     x:Name="welcomeLabel"
-                    Text="Welcome to Xamarin.Forms!" 
+                    Text="Welcome to the Log File!
+                    It's a bit messy, but our sever can sort through this and make it pretty" 
                     HorizontalOptions="Center" 
                     TextColor="Black"
                 />
 
                 <Label
                     x:Name="LogLabel"
+                    Text="default text"
                  />
 
             </StackLayout>

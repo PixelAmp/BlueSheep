@@ -11,9 +11,11 @@ namespace BlueSheep
 
         public MainViewModel()
         {
+            //acceleromiter letter used to be a 'G' but changed to an A
+            //if broken this might be why
             this.Sensors = new List<ISensorViewModel>
             {
-                new SensorViewModel<MotionReading>(CrossSensors.Accelerometer, "G"),
+                new SensorViewModel<MotionReading>(CrossSensors.Accelerometer, "A"),
                 new SensorViewModel<MotionReading>(CrossSensors.Gyroscope, "G"),
                 new SensorViewModel<MotionReading>(CrossSensors.Magnetometer, "M"),
                 new SensorViewModel<CompassReading>(CrossSensors.Compass, "D"),

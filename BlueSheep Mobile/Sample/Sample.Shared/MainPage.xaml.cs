@@ -9,6 +9,8 @@ namespace BlueSheep
         {
             InitializeComponent();
             this.BindingContext = new MainViewModel();
+            var item = new LogItems();
+            DisplayLog.Text = item.Accelerometer;
         }
 
         void GoToLogPage(object sender, System.EventArgs e)
