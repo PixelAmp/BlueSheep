@@ -39,6 +39,7 @@ namespace BlueSheep
         public string Password { get; set; }
     }
 
+    //I don't think this gets used
     public class LogItems
     {
         public string Accelerometer { get; set; }

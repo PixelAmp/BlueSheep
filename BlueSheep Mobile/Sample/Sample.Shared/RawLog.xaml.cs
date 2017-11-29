@@ -21,6 +21,14 @@ namespace BlueSheep
             
         }
 
+        public RawLog(string Log)
+        {
+            InitializeComponent();
+            
+            LogLabel.Text = Log;
+
+        }
+
         async private void ReadFile()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

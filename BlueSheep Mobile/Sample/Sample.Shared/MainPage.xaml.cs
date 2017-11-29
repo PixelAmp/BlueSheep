@@ -10,7 +10,6 @@ namespace BlueSheep
             InitializeComponent();
             this.BindingContext = new MainViewModel();
             var item = new LogItems();
-            DisplayLog.Text = item.Accelerometer;
         }
 
         void GoToLogPage(object sender, System.EventArgs e)
@@ -21,6 +20,16 @@ namespace BlueSheep
         void GoToChartPage(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new DataRep());
+        }
+
+        void Log_To_Server(object sender, System.EventArgs e)
+        {
+            var listViewItem = (MenuItem)sender;
+            string log = (string)listViewItem.CommandParameter;
+            //TO DO: Clear the data in the log once it is passed to the server to reduce overlapping
+
+            Navigation.PushAsync(new RawLog(log));
+
         }
     }
 }

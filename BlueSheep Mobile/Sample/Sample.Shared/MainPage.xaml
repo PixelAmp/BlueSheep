@@ -19,11 +19,6 @@
                             Clicked="GoToLogPage"
                             Style="{StaticResource ClickableTextButtonStyle}"
                         />
-
-                        <Label 
-                            x:Name="DisplayLog" 
-                            Text="default"
-                            HeightRequest="40"/>
                     </StackLayout>
                 </ListView.Header>
 
@@ -49,10 +44,12 @@
                                         <Label Text="{Binding ValueName, StringFormat='{0} : '}" FontAttributes="Bold" />
                                         <Label Text="{Binding Value}" FontAttributes="Italic" />
                                     </StackLayout>
-                                    <!--<Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />-->
 
-                                    <Label Text="{Binding Log, StringFormat='Log : {0}'}" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" HeightRequest="20"/>
-
+                                    <ScrollView Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" HeightRequest="40">
+                                        <Label Text="{Binding Log, StringFormat='Log : {0}'}" />
+                                        <!--<Label Text="{Binding Time, StringFormat='Start Time : {0}'}" Grid.Column="0" Grid.Row="2" />-->
+                                    </ScrollView>
+                                    
                                     <Button Text="{Binding ToggleText}" Command="{Binding Toggle}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
                                         <Button.Triggers>
                                             <Trigger TargetType="Button" Property="IsEnabled" Value="False">
@@ -67,6 +64,16 @@
                                     </Button>
                                 </Grid>
                             </ViewCell.View>
+
+                            <ImageCell.ContextActions>
+                                <MenuItem
+                                    Text="Send Log To Server"
+                                    Clicked="Log_To_Server"
+                                    CommandParameter="{Binding Log}"
+                                    IsDestructive="True"
+                                />
+                            </ImageCell.ContextActions>
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
