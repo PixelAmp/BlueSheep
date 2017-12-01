@@ -21,7 +21,7 @@ namespace BlueSheep
             this.ValueName = valueName;
             this.ToggleText = sensor.IsAvailable ? "Start" : "Sensor Not Available";
             this.Value = "No Data";
-            this.Log = Title + " ";
+            this.Log = Title;
             var item = new LogItems();
 
 
@@ -68,7 +68,7 @@ namespace BlueSheep
             Device.BeginInvokeOnMainThread(() =>
             {
                 this.Value = reading.ToString();
-                this.Log += (DateTime.Now.ToString() + reading.ToString());
+                this.Log += " " + (DateTime.Now.ToString() + reading.ToString());
             });
         }
     }

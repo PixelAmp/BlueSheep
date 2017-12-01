@@ -33,7 +33,7 @@ namespace BlueSheep
             {
                 //this is so that the user doesn't back into the login page and makes the permissions page the top page on the stack
                 Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
-                await Navigation.PopAsync(); //delete's login page from the stack
+                await Navigation.PopAsync(); //removes login page from the stack
             }
 
             else

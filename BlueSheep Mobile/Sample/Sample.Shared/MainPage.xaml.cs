@@ -14,7 +14,7 @@ namespace BlueSheep
 
         void GoToLogPage(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new RawLog());
+            //Navigation.PushAsync(new RawLog());
         }
 
         void GoToChartPage(object sender, System.EventArgs e)
