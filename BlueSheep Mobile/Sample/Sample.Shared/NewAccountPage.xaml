@@ -4,10 +4,54 @@
              x:Class="BlueSheep.NewAccountPage">
     <ContentPage.Content>
         <StackLayout Style="{StaticResource StackLayoutStyle}" >
-            <Label 
-                Text="Create a new Account Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            
+            <Label
+                Margin="0, 20,0,-10"
+                Text="Sign up for"
+                TextColor="Black"
+                FontSize="15"
+                />
+
+            <Label
+            Text="Blue Sheep Mobile"
+            TextColor="Black"
+            HorizontalTextAlignment="Start"
+            Font="Lobster-Regular.ttf#Lobster-Regular"
+            FontSize="40"
+            />
+            
+            <Label
+                Text="See the data you produce as you produce it!"
+                />
+
+            <Entry
+                x:Name="Username_Entry"
+                Placeholder="UserName"
+                Style="{StaticResource EntryBoxStyle}"
+                />
+
+            <Entry
+                x:Name="Password_Entry"
+                Placeholder="Password"
+                Style="{StaticResource EntryBoxStyle}"
+                IsPassword="True"
+                />
+
+            <Button
+                Text="Sign up!"
+                Style="{StaticResource ClickableTextButtonStyle}"
+                Clicked="Sign_up_command"
+                HorizontalOptions="Center"
+                />
+
+            <Image
+                Margin="0,20"
+                Source="BlueSheep.png"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                HeightRequest="200"
+                />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
