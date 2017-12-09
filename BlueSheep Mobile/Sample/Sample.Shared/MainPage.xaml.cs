@@ -26,10 +26,11 @@ namespace BlueSheep
         {
             var listViewItem = (MenuItem)sender;
             string log = (string)listViewItem.CommandParameter;
-            //TO DO: Clear the data in the log once it is passed to the server to reduce overlapping
+
+            SendLogToServer instance = new SendLogToServer();
+            instance.Server_Send(log);
 
             Navigation.PushAsync(new RawLog(log));
-
         }
     }
 }

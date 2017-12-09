@@ -8,9 +8,9 @@
             <StackLayout>
                 <Label 
                     x:Name="welcomeLabel"
-                    Text="Welcome to the Log File!
-                    It's a bit messy, but our sever can sort through this and make it pretty" 
+                    Text="Welcome to the Log File! It's a bit messy now, but our sever can sort through this and make it pretty" 
                     HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"
                     TextColor="Black"
                 />
 

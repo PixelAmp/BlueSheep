@@ -4,7 +4,6 @@ using System.Windows.Input;
 using Plugin.Sensors;
 using Xamarin.Forms;
 using PropertyChanged;
-using System.IO; //read and write files
 
 
 namespace BlueSheep
@@ -21,7 +20,7 @@ namespace BlueSheep
             this.ValueName = valueName;
             this.ToggleText = sensor.IsAvailable ? "Start" : "Sensor Not Available";
             this.Value = "No Data";
-            this.Log = Title;
+            this.Log = ValueName;
             var item = new LogItems();
 
 

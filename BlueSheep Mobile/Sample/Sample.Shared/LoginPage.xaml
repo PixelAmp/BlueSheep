@@ -6,6 +6,7 @@
     NavigationPage.HasNavigationBar ="false">
 
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Style="{StaticResource StackLayoutStyle}" >
             
             <Label
@@ -34,7 +35,7 @@
             <Button
                 x:Name="LoginButton"
                 Text ="Login"
-                Clicked="Login_Clicked_Basic"
+                Clicked="Login_Clicked"
                 Style="{StaticResource ClickableTextButtonStyle}"
                 HorizontalOptions="Center"
                 />
@@ -54,13 +55,18 @@
                     Clicked="NewAccount_Clicked"/>
             </StackLayout>
 
+            <Button
+                    Text="Login without a password"
+                    Style="{StaticResource ClickableTextButtonStyle}"
+                    Clicked="Bypass_Login"/>
+
             <Image
                 Margin="0,20"
                 Source="BlueSheep.png"
                 HorizontalOptions="Center"
-                WidthRequest="200"
-                HeightRequest="200"
+                
                     />
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

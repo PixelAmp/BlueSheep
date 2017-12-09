@@ -19,13 +19,13 @@ namespace BlueSheep
         {
             if (Username_Entry.Text == null || Username_Entry.Text == "")
             { //if entry box was not touched (null) or is touched but empty ("")
-                await DisplayAlert("Error: Username", "Please enter a Username", "OK");
+                await DisplayAlert("Error", "Please enter a Username", "OK");
                 return;
             }
 
             if (Password_Entry.Text == null || Password_Entry.Text == "")
             { //if entry box was not touched (null) or is touched but empty ("")
-                await DisplayAlert("Error: Password", "Please enter a Password", "OK");
+                await DisplayAlert("Error", "Please enter a Password", "OK");
                 return;
             }
 
@@ -121,6 +121,15 @@ namespace BlueSheep
         async void ForgotPassword_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new ForgotPasswordPage()); //goto the new password retrival page
+        }
+
+        async void Bypass_Login(object sender, System.EventArgs e)
+        {
+            await DisplayAlert("Only temporary", "This button will be removed in the final build, only here to avoid logging in every time", "OK");
+            //this is so that the user doesn't back into the login page and makes the permissions page the top page on the stack
+            Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
+            await Navigation.PopAsync(); //removes login page from the stack
+
         }
     }
 }

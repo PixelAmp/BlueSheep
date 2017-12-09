@@ -35,22 +35,14 @@ namespace BlueSheep
     {
         public readonly string Command = "ADD_USER";
         public string Username { get; set; }
-        public string Email { get; set; }
         public string Password { get; set; }
     }
 
     //I don't think this gets used
     public class LogItems
     {
-        public string Accelerometer { get; set; }
-        public string Gyroscope { get; set; }
-        public string Magnetometer { get; set; }
-        public string Compass { get; set; }
-        public string DeviceOrientation { get; set; }
-        public string AmbientLight { get; set; }
-        public string Barometer { get; set; }
-        public string Pedometer { get; set; }
-        public string Proximity { get; set; }
+        public string Log { get; set; }
+        public string Title { get; set; }
     }
 
 }

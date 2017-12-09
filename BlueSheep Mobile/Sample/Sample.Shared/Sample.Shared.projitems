@@ -37,6 +37,7 @@
       <DependentUpon>RawLog.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SendLogToServer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SensorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ServerItems.cs" />
   </ItemGroup>
