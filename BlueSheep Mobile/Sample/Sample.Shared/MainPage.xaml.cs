@@ -30,7 +30,7 @@ namespace BlueSheep
             SendLogToServer instance = new SendLogToServer();
             instance.Server_Send(log);
 
-            Navigation.PushAsync(new RawLog(log));
+            //Navigation.PushAsync(new RawLog(log));
         }
     }
 }

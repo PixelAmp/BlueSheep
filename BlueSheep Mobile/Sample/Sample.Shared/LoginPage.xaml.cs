@@ -63,7 +63,8 @@ namespace BlueSheep
             item.Password = Password_Entry.Text;
 
             //set ip address to connect to
-            var uri = new Uri("http://34.208.179.48/index.py");
+            //var uri = new Uri("http://34.208.179.48/index.py");
+            var uri = new Uri("http://35.160.21.132");
 
             //serialize object and make it ready for sending over the internet
             var json = JsonConvert.SerializeObject(item);

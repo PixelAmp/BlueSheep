@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Newtonsoft.Json; //use the Json Stuff
 using System.Net.Http; //handle http requests
+using System.IO;
 
 
 namespace BlueSheep
@@ -11,16 +12,19 @@ namespace BlueSheep
     public class SendLogToServer
     {
         private static Page page;//allows the use of popups in the case of an error
+        
 
         public async void Server_Send(string SensorLog)
         {
+            WriteToFile(SensorLog);
             
             //create the item we want to send
             var item = new LogItems();
             item.Log = SensorLog;
 
             //set ip address to connect to
-            var uri = new Uri("http://34.208.179.48/index.py");
+            //var uri = new Uri("http://34.208.179.48/index.py");
+            var uri = new Uri("http://35.160.21.132");
 
             //serialize object and make it ready for sending over the internet
             var json = JsonConvert.SerializeObject(item);
@@ -65,6 +69,19 @@ namespace BlueSheep
             
         }
         
+        void WriteToFile(string Log)
+        {
+            char Sensortype;
+            Sensortype = Log[0];
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string filename = Path.Combine(path, (Sensortype + "Log.txt"));
+            
+            using (var streamWriter = new StreamWriter(filename, true))
+            {
+                streamWriter.WriteLine(Log);
+            }
+        }
 
     }
 }
