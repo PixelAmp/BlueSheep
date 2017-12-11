@@ -9,8 +9,8 @@ using Xamarin.Forms.Platform.Android;
 namespace BlueSheep.Droid
 {
     [Activity(
-        Label = "Sensors",
-        Icon = "@drawable/icon",
+        Label = "BlueSheepMobile",
+        Icon = "@drawable/BlueSheep",
         Theme = "@style/MainTheme",
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation
