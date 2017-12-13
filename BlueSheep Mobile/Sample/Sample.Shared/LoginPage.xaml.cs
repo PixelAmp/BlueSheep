@@ -35,6 +35,15 @@ namespace BlueSheep
                 await Navigation.PopAsync(); //removes login page from the stack
             }
 
+            else if(Username_Entry.Text == App.userUsername && Password_Entry.Text == App.userPassword)
+            {
+                App.LoggedIn = true;
+                Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
+                await Navigation.PopAsync(); //removes login page from the stack
+
+            }
+
+
             else
             {
                 await DisplayAlert("Error: IncorrectPassword", "Incorrect username or password", "OK");
@@ -56,10 +65,16 @@ namespace BlueSheep
 
         async void Bypass_Login(object sender, System.EventArgs e)
         {
-            await DisplayAlert("Only temporary", "This button will be removed in the final build, only here to avoid logging in every time", "OK");
-            //this is so that the user doesn't back into the login page and makes the permissions page the top page on the stack
-            Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
-            await Navigation.PopAsync(); //removes login page from the stack
+            var answer = await DisplayAlert("Are you sure? :'(", "If you log in this way, your data will be lumped in with the general and will be completely anonymous", "Yes", "No");
+            if (answer == false) //user changed their mind
+            {
+                return;
+            }
+            else
+            {
+                Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
+                await Navigation.PopAsync(); //removes login page from the stack
+            }
 
         }
     }

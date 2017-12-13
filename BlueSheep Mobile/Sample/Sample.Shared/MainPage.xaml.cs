@@ -13,6 +13,7 @@ namespace BlueSheep
 
         void GoToChartPage(object sender, System.EventArgs e)
         {
+            //go to a bunch of charts
             Navigation.PushAsync(new DataRep());
         }
 
@@ -26,6 +27,7 @@ namespace BlueSheep
 
         void Display_Data(object sender, System.EventArgs e)
         {
+            //display data for a single sensor
             var listViewItem = (MenuItem)sender;
             string DataType = (string)listViewItem.CommandParameter;
 

@@ -22,16 +22,27 @@ namespace BlueSheep
 
             SensorNameLabel.Text += SensorName;
 
-            nameOfFile = SensorName[0] + "log.txt";
+            nameOfFile = SensorName.Substring(0, 2) + "log.txt";
             
             filePath = Path.Combine(App.Logpath, (nameOfFile));
 
             LogLabel.Text = SensorName;
 
-            ReadLog();
-
             SendLog();
 
+            ReadLogAndDelete();
+
+        }
+
+        void ReadLogAndDelete()
+        {
+            using (var streamReader = new StreamReader(filePath))
+            {
+                string content = streamReader.ReadToEnd();
+                LogLabel.Text = content;
+            }
+
+            //File.Delete(filePath); //delete file since it has already been sent
         }
 
         void SendLog()
@@ -47,14 +58,6 @@ namespace BlueSheep
             client.Disconnect();
         }
 
-        void ReadLog()
-        {
-            using (var streamReader = new StreamReader(filePath))
-            {
-                string content = streamReader.ReadToEnd();
-                LogLabel.Text = content;
-                System.Diagnostics.Debug.WriteLine(content);
-            }
-        }
+        
     }
 }

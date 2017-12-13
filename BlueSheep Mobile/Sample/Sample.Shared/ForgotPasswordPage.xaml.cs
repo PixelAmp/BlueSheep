@@ -21,18 +21,14 @@ namespace BlueSheep
         {
             if (User_Entry.Text == null || User_Entry.Text == "")
             { //if entry box was not touched (null) or is touched but empty ("")
-                await DisplayAlert("Error: UserEntry", "Please enter a Username or Email", "OK");
+                await DisplayAlert("Error: UserEntry", "Please enter a Username", "OK");
                 return;
             }
 
             //ask user before sending email
-            var answer = await DisplayAlert("Forgot Password?", "Making sure, would you like us to send your password to the email or username provided?", "Yes", "No");
-            if (answer == false) //user changed their mind
-            {
-                return;
-            }
+            await DisplayAlert("Message recived!", "Okay I've got the entire flock working on it! We'll get back to you as soon as we can!", "OK");
 
-
+            await Navigation.PopAsync(); //removes login page from the stack
         }
 	}
 }

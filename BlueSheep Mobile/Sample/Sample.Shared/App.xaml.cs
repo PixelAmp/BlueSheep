@@ -11,7 +11,7 @@ namespace BlueSheep
         public static string userUsername;
         public static string userPassword;
         public static string curDatabaseId;
-        public static bool LoggedIn = true;
+        public static bool LoggedIn = false;
         public static bool Resetlog = false;
 
         public const string hostname = "35.160.19.120";
@@ -32,7 +32,6 @@ namespace BlueSheep
             }
             else
             {
-                //
                 this.MainPage = new NavigationPage(new LoginPage());
             }
         }

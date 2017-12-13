@@ -21,7 +21,7 @@ namespace BlueSheep
             this.ValueName = valueName;
             this.ToggleText = sensor.IsAvailable ? "Start" : "Sensor Not Available";
             this.Value = "No Data";
-            filePath = Path.Combine(App.Logpath, (valueName + "log.txt"));
+            filePath = Path.Combine(App.Logpath, (Title.Substring(0, 2) + "log.txt"));
 
 
             this.Toggle = new Command(() =>
@@ -36,9 +36,7 @@ namespace BlueSheep
                     this.sensorSub = sensor
                         .WhenReadingTaken()
                         .Sample(TimeSpan.FromSeconds(1))
-                        .Subscribe(this.Update);                                            
-
-                    this.Time = DateTime.Now.ToString();
+                        .Subscribe(this.Update);
                 }
 
                 else
@@ -46,7 +44,6 @@ namespace BlueSheep
                     this.ToggleText = "Start";
                     this.sensorSub.Dispose();
                     this.sensorSub = null;
-                    this.Time = DateTime.Now.ToString();
                 }
             });
         }
@@ -56,8 +53,6 @@ namespace BlueSheep
         public string ValueName { get; }
         public string Value { get; set; }
         public string ToggleText { get; set; }
-        public string Time { get; set; }
-        public string Log { get; set; }
 
 
 
@@ -70,7 +65,7 @@ namespace BlueSheep
 
                 using (var streamWriter = new StreamWriter(filePath, true))
                 {
-                    streamWriter.WriteLine(DateTime.Now.ToString() + reading.ToString());
+                    streamWriter.WriteLine( "#" + DateTime.Now.ToString() + reading.ToString());
                 }
                 //this.Log += " #" + (DateTime.Now.ToString() + reading.ToString());                
             });

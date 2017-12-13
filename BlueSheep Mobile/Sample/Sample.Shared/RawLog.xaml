@@ -16,7 +16,7 @@
 
                 <Label
                     x:Name="SensorNameLabel"
-                    Text="Log of"
+                    Text="Log of "
                     HorizontalOptions="Center"
                     TextColor="Black"
                  />

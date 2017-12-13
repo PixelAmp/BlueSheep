@@ -30,14 +30,10 @@ namespace BlueSheep
                 return;
             }
             
-            //sends username and password to sever, and checks availability
-            //if (successful)
             await DisplayAlert("Account Created!", "Please log in", "OK");
             App.userUsername = Username_Entry.Text;
-            //don't need to insert page since it's already there
-            //Navigation.InsertPageBefore(new LoginPage(Username_Entry.Text), this); //inserts next page below the login page
+            App.userPassword = Password_Entry.Text;
             await Navigation.PopAsync(); //removes login page from the stack
-
         }
     }
 }

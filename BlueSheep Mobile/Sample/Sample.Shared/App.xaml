@@ -21,6 +21,24 @@
                 <Setter Property="FontSize"      Value="20"/>
                 <Setter Property="HeightRequest" Value="50"/>
             </Style>
+
+            <Style x:Key="GraphLabelStyle"  TargetType="Label">
+                <Setter Property="Text"              Value="Placeholder"/>
+                <Setter Property="TextColor"         Value="Black"/>
+                <Setter Property="Font"              Value="Lobster-Regular.ttf#Lobster-Regular"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize"          Value="50"/>
+                <Setter Property="Margin"            Value="0,10,0,0"/>
+            </Style>
+
+            <Style x:Key="GraphImageStyle"  TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="WidthRequest"      Value="400"/>
+                <Setter Property="HeightRequest"     Value="300"/>
+                <Setter Property="Source"            Value="BlueSheep.png"/>
+            </Style>
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
