@@ -31,6 +31,7 @@ namespace BlueSheep
 
             if (Username_Entry.Text == "admin" && Password_Entry.Text == "password")
             {
+                App.LoggedIn = true;
                 //this is so that the user doesn't back into the login page and makes the permissions page the top page on the stack
                 Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
                 await Navigation.PopAsync(); //removes login page from the stack
@@ -63,8 +64,7 @@ namespace BlueSheep
             item.Password = Password_Entry.Text;
 
             //set ip address to connect to
-            //var uri = new Uri("http://34.208.179.48/index.py");
-            var uri = new Uri("http://35.160.21.132");
+            var uri = new Uri(App.URILocation);
 
             //serialize object and make it ready for sending over the internet
             var json = JsonConvert.SerializeObject(item);
@@ -74,7 +74,8 @@ namespace BlueSheep
             var response = await App.client.PostAsync(uri, content); //post
 
             if (response.IsSuccessStatusCode)
-            { //success
+            { 
+                //success
                 //get our JSON response and convert it to a ResponseItem object
                 ResponseItem resItem = new ResponseItem();
                 try
@@ -91,12 +92,11 @@ namespace BlueSheep
                 {
                     //login was successful, so store the successful login info for future use. 
                     //(these variables are global to the app)
-                    //will use username for log file
 
                     App.userUsername = item.Username;
                     App.userPassword = item.Password;
+                    App.LoggedIn = true;
  
-                    //this is so that the user doesn't back into the login page and makes the permissions page the top page on the stack
                     Navigation.InsertPageBefore(new MainPage(), this); //inserts next page below the login page
                     await Navigation.PopAsync(); //delete's login page from the stack so you can't go back to it
 

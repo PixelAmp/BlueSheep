@@ -38,11 +38,15 @@ namespace BlueSheep
         public string Password { get; set; }
     }
 
-    //I don't think this gets used
+    //
     public class LogItems
     {
         public string Log { get; set; }
         public string Title { get; set; }
     }
 
+    public class DisplayItems
+    {
+        public string SensorType { get; set; }
+    }
 }

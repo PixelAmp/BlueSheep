@@ -17,9 +17,28 @@ namespace BlueSheep
             InitializeComponent();
             
             LogLabel.Text = Log;
-
+            SendLog(Log);
+            WriteToFile(Log);
         }
 
-       
-	}
+        void SendLog(string Log)
+        {
+            SendLogToServer instance = new SendLogToServer();
+            instance.Server_Send(Log);
+        }
+
+        void WriteToFile(string Log)
+        {
+            char Sensortype;
+            Sensortype = Log[0];
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string filename = Path.Combine(path, (Sensortype + "Log.txt"));
+
+            using (var streamWriter = new StreamWriter(filename, true))
+            {
+                streamWriter.WriteLine(Log);
+            }
+        }
+    }
 }
