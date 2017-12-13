@@ -116,13 +116,13 @@ namespace BlueSheep
                     PeImage.Source = filePath;
                     break;
 
-                /*
-                case 8:
-                    PrLabel.Text = "Proximity";
-                    PrImage.Source = filePath;
-                    break;
-                */
+                
             }
+            /*
+            filePath.Substring(filePath.Length - 3);
+            filePath += "txt";
+            File.Delete(filePath); //delete file since it has already been sent
+            */
         }
         
     }
