@@ -3,18 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlueSheep.DisplayData">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Style="{StaticResource StackLayoutStyle}">
             <Label 
                 x:Name="TopLabel"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+                Text="Text Placeholder"
                 HorizontalOptions="CenterAndExpand" 
                 />
 
             <Image
                 x:Name="GraphImage"
                 Source="BlueSheep.png"
-                HorizontalOptions="Center"                
+                HorizontalOptions="Center"
+                HeightRequest="150"
+                WidthRequest="200"
+                
                 />
         </StackLayout>
     </ContentPage.Content>

@@ -42,7 +42,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SensorViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ServerItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">

@@ -29,7 +29,6 @@ namespace BlueSheep
                 await DisplayAlert("Error: Password", "Please enter a Password", "OK");
                 return;
             }
-
             
             //sends username and password to sever, and checks availability
             //if (successful)

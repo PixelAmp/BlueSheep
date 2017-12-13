@@ -64,7 +64,8 @@
                 Margin="0,20"
                 Source="BlueSheep.png"
                 HorizontalOptions="Center"
-                
+                HeightRequest="200"
+                WidthRequest="200"
                     />
         </StackLayout>
         </ScrollView>

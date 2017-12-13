@@ -15,9 +15,14 @@
                 />
 
                 <Label
-                    x:Name="LogLabel"
-                    Text="default text"
+                    x:Name="SensorNameLabel"
+                    Text="Log of"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
                  />
+                <Label
+                    x:Name="LogLabel"
+                    />
 
             </StackLayout>
         </ScrollView>

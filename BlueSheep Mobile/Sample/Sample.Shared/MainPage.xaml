@@ -67,9 +67,18 @@
                                 <MenuItem
                                     Text="Send Log To Server"
                                     Clicked="Log_To_Server"
-                                    CommandParameter="{Binding Log}"
+                                    CommandParameter="{Binding Title}"
                                     IsDestructive="True"
                                 />
+
+                                <MenuItem
+                                    Text="See Graph of log"
+                                    Clicked="Display_Data" 
+                                    CommandParameter="{Binding Title}"
+                                    IsDestructive="True"
+                                />
+
+
                             </ImageCell.ContextActions>
 
                         </ViewCell>

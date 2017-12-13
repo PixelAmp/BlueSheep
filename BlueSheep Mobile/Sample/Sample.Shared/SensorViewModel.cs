@@ -13,7 +13,7 @@ namespace BlueSheep
     public class SensorViewModel<TReading> : ISensorViewModel
     {
         IDisposable sensorSub;
-        string filename;
+        string filePath;
 
         public SensorViewModel(ISensor<TReading> sensor, string valueName, string title = null)
         {
@@ -21,9 +21,7 @@ namespace BlueSheep
             this.ValueName = valueName;
             this.ToggleText = sensor.IsAvailable ? "Start" : "Sensor Not Available";
             this.Value = "No Data";
-            this.Log = ValueName;
-            var item = new LogItems();
-            filename = valueName + "Log.txt";
+            filePath = Path.Combine(App.Logpath, (valueName + "log.txt"));
 
 
             this.Toggle = new Command(() =>
@@ -69,7 +67,12 @@ namespace BlueSheep
             Device.BeginInvokeOnMainThread(() =>
             {
                 this.Value = reading.ToString();
-                this.Log += " #" + (DateTime.Now.ToString() + reading.ToString());                
+
+                using (var streamWriter = new StreamWriter(filePath, true))
+                {
+                    streamWriter.WriteLine(DateTime.Now.ToString() + reading.ToString());
+                }
+                //this.Log += " #" + (DateTime.Now.ToString() + reading.ToString());                
             });
         }
     }

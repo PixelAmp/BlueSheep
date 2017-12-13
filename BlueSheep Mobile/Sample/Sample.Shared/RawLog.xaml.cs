@@ -16,41 +16,44 @@ namespace BlueSheep
         string filePath;
         string nameOfFile;
 
-        public RawLog(string Log)
+        public RawLog(string SensorName)
         {
             InitializeComponent();
 
-            nameOfFile = Log[0] + "log.txt";
+            SensorNameLabel.Text += SensorName;
+
+            nameOfFile = SensorName[0] + "log.txt";
             
             filePath = Path.Combine(App.Logpath, (nameOfFile));
 
-            LogLabel.Text = Log;
+            LogLabel.Text = SensorName;
 
-            WriteLog(Log);
+            ReadLog();
 
-            SendLog(Log);
+            SendLog();
 
         }
 
-        void SendLog(string Log)
+        void SendLog()
         {
             Rebex.Licensing.Key = App.RebexKey;
-            // create client, connect and log in
+            //Create client, connect and log in
             Sftp client = new Sftp();
             client.Connect(App.hostname);
             client.Login(App.serverUsername, App.serverPassword);
 
             client.PutFile(filePath, nameOfFile);
 
-
             client.Disconnect();
         }
 
-        void WriteLog(string Log)
+        void ReadLog()
         {
-            using (var streamWriter = new StreamWriter(filePath, true))
+            using (var streamReader = new StreamReader(filePath))
             {
-                streamWriter.WriteLine(Log);
+                string content = streamReader.ReadToEnd();
+                LogLabel.Text = content;
+                System.Diagnostics.Debug.WriteLine(content);
             }
         }
     }

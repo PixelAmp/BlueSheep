@@ -9,12 +9,6 @@ namespace BlueSheep
         {
             InitializeComponent();
             this.BindingContext = new MainViewModel();
-            var item = new LogItems();
-        }
-
-        void GoToLogPage(object sender, System.EventArgs e)
-        {
-            //Navigation.PushAsync(new RawLog());
         }
 
         void GoToChartPage(object sender, System.EventArgs e)
@@ -25,9 +19,9 @@ namespace BlueSheep
         void Log_To_Server(object sender, System.EventArgs e)
         {
             var listViewItem = (MenuItem)sender;
-            string log = (string)listViewItem.CommandParameter;
+            string SensorName = (string)listViewItem.CommandParameter;
 
-            Navigation.PushAsync(new RawLog(log));
+            Navigation.PushAsync(new RawLog(SensorName));
         }
 
         void Display_Data(object sender, System.EventArgs e)
@@ -35,7 +29,7 @@ namespace BlueSheep
             var listViewItem = (MenuItem)sender;
             string DataType = (string)listViewItem.CommandParameter;
 
-            Navigation.PushAsync(new RawLog(DataType));
+            Navigation.PushAsync(new DisplayData(DataType));
         }
     }
 }
