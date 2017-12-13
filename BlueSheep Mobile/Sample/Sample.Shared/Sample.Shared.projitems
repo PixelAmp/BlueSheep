@@ -16,8 +16,8 @@
       <DependentUpon>DataRep.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)DisplayLog.xaml.cs">
-      <DependentUpon>DisplayLog.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)DisplayData.xaml.cs">
+      <DependentUpon>DisplayData.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ForgotPasswordPage.xaml.cs">
@@ -41,7 +41,6 @@
       <DependentUpon>RawLog.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)SendLogToServer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SensorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ServerItems.cs" />
   </ItemGroup>
@@ -87,7 +86,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)DisplayLog.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)DisplayData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

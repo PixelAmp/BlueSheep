@@ -27,16 +27,13 @@ namespace BlueSheep
             var listViewItem = (MenuItem)sender;
             string log = (string)listViewItem.CommandParameter;
 
-            //Navigation.PushAsync(new RawLog(log));
+            Navigation.PushAsync(new RawLog(log));
         }
 
         void Display_Data(object sender, System.EventArgs e)
         {
             var listViewItem = (MenuItem)sender;
             string DataType = (string)listViewItem.CommandParameter;
-
-            SendLogToServer instance = new SendLogToServer();
-            instance.Server_Send(DataType);
 
             Navigation.PushAsync(new RawLog(DataType));
         }

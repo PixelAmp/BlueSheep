@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Plugin.Sensors;
 using Xamarin.Forms;
 using PropertyChanged;
+using System.IO; //read and write files
 
 
 namespace BlueSheep
@@ -12,7 +13,7 @@ namespace BlueSheep
     public class SensorViewModel<TReading> : ISensorViewModel
     {
         IDisposable sensorSub;
-        
+        string filename;
 
         public SensorViewModel(ISensor<TReading> sensor, string valueName, string title = null)
         {
@@ -22,6 +23,7 @@ namespace BlueSheep
             this.Value = "No Data";
             this.Log = ValueName;
             var item = new LogItems();
+            filename = valueName + "Log.txt";
 
 
             this.Toggle = new Command(() =>
@@ -67,7 +69,7 @@ namespace BlueSheep
             Device.BeginInvokeOnMainThread(() =>
             {
                 this.Value = reading.ToString();
-                this.Log += " " + (DateTime.Now.ToString() + reading.ToString());
+                this.Log += " #" + (DateTime.Now.ToString() + reading.ToString());                
             });
         }
     }

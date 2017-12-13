@@ -18,11 +18,15 @@ namespace BlueSheep
         public static bool LoggedIn = false;
         public static bool Resetlog = false;
 
+        public const string hostname = "35.160.19.120";
+        public const string serverUsername = "client";
+        public const string serverPassword = "yyV;'P^VzuR4e&7?wbd8";
+        public const string RebexKey = "==AiYZCltZiMK6Rzn4UGFeg8KUnHs/86tdqzS6M7z1XuPk==";
+        public static string Logpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+
         public App()
         {
-            client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000; //256KB
-
             this.InitializeComponent();
 
             if (LoggedIn)

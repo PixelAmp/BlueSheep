@@ -61,9 +61,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Sensors, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.Sensors.2.2.1\lib\MonoAndroid10\Plugin.Sensors.dll</HintPath>
     </Reference>
@@ -73,6 +70,15 @@
     <Reference Include="PropertyChanged, Version=1.53.0.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PropertyChanged.Fody.1.53.0\lib\netstandard10\PropertyChanged.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Rebex.Common, Version=2.5.6534.0, Culture=neutral, PublicKeyToken=1c4638788972655d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rebex.Common.2.5.6534\lib\monoandroid40\Rebex.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Networking, Version=3.5.6534.0, Culture=neutral, PublicKeyToken=1c4638788972655d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rebex.Networking.3.5.6534\lib\monoandroid40\Rebex.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Sftp, Version=3.0.6534.0, Culture=neutral, PublicKeyToken=1c4638788972655d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rebex.Sftp.3.0.6534\lib\monoandroid40\Rebex.Sftp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

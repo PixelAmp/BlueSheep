@@ -6,36 +6,49 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO; //read and write files
+using Rebex.Net;
 
 namespace BlueSheep
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RawLog : ContentPage
 	{
+        string filePath;
+        string nameOfFile;
+
         public RawLog(string Log)
         {
             InitializeComponent();
+
+            nameOfFile = Log[0] + "log.txt";
             
+            filePath = Path.Combine(App.Logpath, (nameOfFile));
+
             LogLabel.Text = Log;
+
+            WriteLog(Log);
+
             SendLog(Log);
-            WriteToFile(Log);
+
         }
 
         void SendLog(string Log)
         {
-            SendLogToServer instance = new SendLogToServer();
-            instance.Server_Send(Log);
+            Rebex.Licensing.Key = App.RebexKey;
+            // create client, connect and log in
+            Sftp client = new Sftp();
+            client.Connect(App.hostname);
+            client.Login(App.serverUsername, App.serverPassword);
+
+            client.PutFile(filePath, nameOfFile);
+
+
+            client.Disconnect();
         }
 
-        void WriteToFile(string Log)
+        void WriteLog(string Log)
         {
-            char Sensortype;
-            Sensortype = Log[0];
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string filename = Path.Combine(path, (Sensortype + "Log.txt"));
-
-            using (var streamWriter = new StreamWriter(filename, true))
+            using (var streamWriter = new StreamWriter(filePath, true))
             {
                 streamWriter.WriteLine(Log);
             }
