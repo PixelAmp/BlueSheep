@@ -1,18 +1,108 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BlueSheep.DataRep">
+             x:Class="BlueSheep.DataRep"
+             Title="All The Sensors!"
+             >
     
   <ContentView.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Style="{StaticResource StackLayoutStyle}" Padding="0, 0, 0, 10">
+                <!-- dont need a button, just have it load on enter
+                <Button
+                    Style="{StaticResource ClickableTextButtonStyle}"
+                    Text="Get Charts from Server"
+                    Clicked="StartRequest"
+                />
+                -->
+                
+                <Label
+                    x:Name="AcLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
                 <Image
-                    Margin="0"
-                    Source="@drawable/MicrochartsGraphs"
-                    HorizontalOptions="Center"
-                    WidthRequest="400"
-                    HeightRequest="600"
-                        />
+                    x:Name="AcImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+                
+                <Label
+                    x:Name="GyLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="GyImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+
+                <Label
+                    x:Name="MaLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="MaImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+
+                <Label
+                    x:Name="CoLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="CoImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+
+                <Label
+                    x:Name="DeLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="DeImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+
+                <Label
+                    x:Name="AmLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="AmImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+
+                <Label
+                    x:Name="BaLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="BaImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
+
+                <Label
+                    x:Name="PeLabel"
+                    Style="{StaticResource GraphLabelStyle}"
+                    FontSize="40"
+                />
+
+                <Image
+                    x:Name="PeImage"
+                    Style="{StaticResource GraphImageStyle}"
+                    />
             </StackLayout>
         </ScrollView>
     </ContentView.Content>

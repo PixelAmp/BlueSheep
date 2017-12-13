@@ -6,17 +6,14 @@
         <StackLayout Style="{StaticResource StackLayoutStyle}">
             <Label 
                 x:Name="TopLabel"
-                Text="Text Placeholder"
-                HorizontalOptions="CenterAndExpand" 
+                Style="{StaticResource GraphLabelStyle}"
+                Text="Text Placeholder" 
+                FontSize="50"
                 />
 
             <Image
                 x:Name="GraphImage"
-                Source="BlueSheep.png"
-                HorizontalOptions="Center"
-                HeightRequest="150"
-                WidthRequest="200"
-                
+                Style="{StaticResource GraphImageStyle}"
                 />
         </StackLayout>
     </ContentPage.Content>

@@ -21,12 +21,20 @@ namespace BlueSheep
             InitializeComponent();
 
             TopLabel.Text = SensorName;
-
-            nameOfFile = SensorName[0] + "log.png";
+            if (SensorName == "DeviceOrientation")
+            {
+                nameOfFile = "Co" + "log.png"; //close enough
+            }
+            else if (SensorName == "Proximity")
+            {
+                nameOfFile = "Am" + "log.png";
+            }
+            else
+            {
+                nameOfFile = SensorName.Substring(0, 2) + "log.png";
+            }
 
             filePath = Path.Combine(App.Logpath, (nameOfFile));
-
-            //LogLabel.Text = SensorName;
 
             Request_Fom_Server();
         }
@@ -34,7 +42,6 @@ namespace BlueSheep
         void Request_Fom_Server()
         {
             Rebex.Licensing.Key = App.RebexKey;
-            //Create client, connect and log in
             Sftp client = new Sftp();
             client.Connect(App.hostname);
             client.Login(App.serverUsername, App.serverPassword);
@@ -44,7 +51,6 @@ namespace BlueSheep
             GraphImage.Source = filePath;
 
             client.Disconnect();
-
         }
     }
 }
