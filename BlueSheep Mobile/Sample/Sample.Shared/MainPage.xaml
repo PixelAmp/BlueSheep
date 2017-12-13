@@ -72,7 +72,7 @@
                                 />
 
                                 <MenuItem
-                                    Text="See Graph of Sensor"
+                                    Text="See Graph"
                                     Clicked="Display_Data" 
                                     CommandParameter="{Binding Title}"
                                     IsDestructive="True"

@@ -6,7 +6,7 @@
         <ResourceDictionary>
             <Style x:Key="StackLayoutStyle" TargetType="StackLayout">
                 <Setter Property="BackgroundColor"  Value="LightSkyBlue"/>
-                <Setter Property="Padding" Value="0,0,0,0"/>
+                <Setter Property="Padding" Value="10,0,10,0"/>
                 <Setter Property="Spacing" Value="3"/>
             </Style>
             

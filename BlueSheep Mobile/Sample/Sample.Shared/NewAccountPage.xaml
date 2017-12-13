@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BlueSheep.NewAccountPage">
+             x:Class="BlueSheep.NewAccountPage"
+             Title="Create Account!"
+             >
     <ContentPage.Content>
         <StackLayout Style="{StaticResource StackLayoutStyle}" >
             
             <Label
-                Margin="0, 20,0,-10"
+                Margin="0, 20,0,0"
                 Text="Sign up for"
                 TextColor="Black"
                 FontSize="15"
@@ -22,6 +24,7 @@
             
             <Label
                 Text="See the data you produce as you produce it!"
+                Margin="0,0,0,10"
                 />
 
             <Entry
