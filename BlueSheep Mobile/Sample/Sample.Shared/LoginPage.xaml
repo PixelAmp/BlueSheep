@@ -56,7 +56,7 @@
             </StackLayout>
 
             <Button
-                    Text="Login without a password"
+                    Text="Continue without an account"
                     Style="{StaticResource ClickableTextButtonStyle}"
                     Clicked="Bypass_Login"/>
 
