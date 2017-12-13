@@ -1,9 +1,0 @@
-https://docs.google.com/document/d/1ps2cPaE2RNX5YV--Tz4JbSsanqSUu-1FwnSwtVvB1CE/edit
-https://github.com/PixelAmp/blueSheep
-https://www.youtube.com/watch?v=oflixU6iNDc 15:16
-https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
-
-
-
-git clone https://github.com/PixelAmp/blueSheep
-git commit -m "Commit message"
